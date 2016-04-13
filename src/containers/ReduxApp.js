@@ -1,6 +1,6 @@
 import React, { Component , Navigator} from 'react-native';
 import { bindActionCreators } from 'redux';
-import Home from '../components/Home';
+import Home from '../page/Home';
 import * as IndexActions from '../actions/IndexActions';
 import { connect } from 'react-redux';
 
@@ -20,7 +20,7 @@ class ReduxApp extends Component {
 }
 
 export default connect ( state => ({
-  state : state.Index
+  state : state.Home
 }),
   (dispatch) => ({
     actions : bindActionCreators(IndexActions , dispatch)

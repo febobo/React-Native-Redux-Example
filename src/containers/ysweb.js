@@ -11,6 +11,10 @@ const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
 
 export default class Index extends Component {
+
+  constructor(props){
+    super(props)
+  }
   render (){
     return (
       <Provider store={store}>
