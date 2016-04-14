@@ -20,7 +20,7 @@ export default class Promotion extends Component {
   render (){
     const { data } = this.props;
     return (
-      <View style={{height : 142}}>
+      <View style={{height : 142 , marginBottom : 8}}>
         { data && data.active ? data.active.map( (v,k) =>
           <TouchableOpacity key={k} >
             <View style={styles.wrap}>
