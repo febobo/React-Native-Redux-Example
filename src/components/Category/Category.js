@@ -69,7 +69,8 @@ let styles = StyleSheet.create({
     flex : 1,
     flexDirection : 'column',
     paddingVertical : 18,
-    backgroundColor : '#fff'
+    backgroundColor : '#fff',
+    marginTop : 8
   },
   col : {
     flex : 1,

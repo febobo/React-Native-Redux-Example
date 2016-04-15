@@ -20,7 +20,7 @@ export default class Ranking extends Component {
   render (){
     const { data } = this.props;
     return (
-      <View style={{paddingHorizontal : 5 , paddingVertical : 10}}>
+      <View style={{paddingHorizontal : 5 , paddingTop : 10 }}>
         <Image
           source={rankingImg}
           style={styles.img}
