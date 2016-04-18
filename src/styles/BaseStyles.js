@@ -3,7 +3,7 @@
 const base = {};
 base.color = '#606060';
 base.bg = '#eee';
-base.ftsize = 14;
+base.ftsize = 12;
 base.baseTitleSize = 18;
 base.priceTextSize = 20;
 base.hotGoodsColor = '#ff6634';

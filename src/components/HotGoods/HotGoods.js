@@ -77,7 +77,7 @@ export default class HotGoods extends Component {
                               return (
                                   <Text
                                    key={'service' + sk}
-                                   style={[BaseStyles.baseServiceTagColor]}
+                                   style={[BaseStyles.baseServiceTagColor , BaseStyles.baseSize]}
                                   >
                                     {sv.service_name}
                                   </Text>
@@ -88,26 +88,30 @@ export default class HotGoods extends Component {
                       }
                     </View>
                     <View style={[styles.dirRow]}>
-                      <Text style={[BaseStyles.baseColor]}>{v.sku_value}</Text>
-                      <Text style={[BaseStyles.baseColor]}>  已售{v.sold_num}{v.unit}</Text>
+                      {
+                        v.sku_value ?
+                          <Text style={[BaseStyles.baseColor, BaseStyles.baseSize ]}>{v.sku_value}  </Text>
+                        : null
+                      }
+                      <Text style={[BaseStyles.baseColor , BaseStyles.baseSize ]}>已售{v.sold_num}{v.unit}</Text>
                     </View>
                     <View>
                       <Text numberOfLines={1}
-                        style={[BaseStyles.baseColor]}
+                        style={[BaseStyles.baseColor , BaseStyles.baseSize]}
                       >{ v.description && v.description.replace(/<[^>]+>/g, '').replace(/&[^]+;/g, '').replace(/\s+/g , '') || "  "}</Text>
                     </View>
                     {/* 价格 */}
                     <View style={[styles.dirRow , styles.price , styles.baseline]}>
                       <View style={[styles.dirRow , styles.baseline]}>
                         <Text
-                          style={[styles.salePrice,BaseStyles.baseColor]}
+                          style={[styles.salePrice,BaseStyles.baseColor , BaseStyles.baseSize]}
                         >
                           <Text style={[BaseStyles.priceTextSize , BaseStyles.priceColor ]}>￥{v.price}</Text>/{v.sale_unit}
                         </Text>
-                        <Text style={[BaseStyles.textLine , BaseStyles.baseColor]}>  ￥{v.original_price}</Text>
+                        <Text style={[BaseStyles.textLine , BaseStyles.baseColor , BaseStyles.baseSize]}>  ￥{v.original_price}</Text>
                       </View>
                       <View>
-                        <Text style={[BaseStyles.brownColor]}>{v.update_time}</Text>
+                        <Text style={[BaseStyles.brownColor , BaseStyles.baseSize]}>{v.update_time}</Text>
                       </View>
                     </View>
                   </View>
@@ -127,26 +131,26 @@ export default class HotGoods extends Component {
                       >
                         {
                           a.type == 'sku_back_subsidy' ?
-                          <Text style={[styles.tagText]}>返</Text>
+                          <Text style={[styles.tagText , BaseStyles.baseSize]}>返</Text>
                           : null
                         }
                         {
                           a.type == 'sku_back_points' ?
-          								<Text style={[styles.tagText]}>积</Text>
+          								<Text style={[styles.tagText , BaseStyles.baseSize]}>积</Text>
                           : null
                         }
                         {
                           a.type == 'sku_consume_points' ?
-          								<Text style={[styles.tagText]}>扣</Text>
+          								<Text style={[styles.tagText , BaseStyles.baseSize]}>扣</Text>
                           : null
                         }
                         {
                           a.type == 'sku_buy_number' ?
-          								<Text style={[styles.tagText]}>限</Text>
+          								<Text style={[styles.tagText , BaseStyles.baseSize]}>限</Text>
                           : null
                         }
                       </View>
-                      <Text style={[styles.tagInfo , BaseStyles.baseColor]}>{a.description}</Text>
+                      <Text style={[styles.tagInfo , BaseStyles.baseColor , BaseStyles.baseSize]}>{a.description}</Text>
                     </View>
                   )
                 }

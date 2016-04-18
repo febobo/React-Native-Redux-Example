@@ -21,12 +21,14 @@ export default class CountDown extends Component {
     const times = {};
     times.current = new Date().getTime();
     times.leftTime = time - times.current ;
+    // console.log(time , times.leftTime)
     if(times.leftTime <= 0) return ;
     // 天
     times.day = Math.floor(times.leftTime / (1000 * 60 * 60 *24));
     // 时
     times.leftHours = times.leftTime % (1000 * 60 * 60 *24);
-    times.hours = Math.floor(times.leftHours / (1000 * 60 * 60))
+    times.hours = Math.floor(times.leftHours / (1000 * 60 * 60));
+    times.hours = times.hours <= 9 ? '0' + times.hours : times.hours;
     // 分
     times.leftMinute = times.leftTime % (1000 * 60 * 60);
     times.minute = Math.floor(times.leftMinute / (1000 * 60))

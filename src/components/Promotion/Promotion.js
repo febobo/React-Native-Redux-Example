@@ -27,6 +27,7 @@ export default class Promotion extends Component {
 
   render (){
     const { data } = this.props;
+    console.log(new Date('2016/04/30 13:38:00'))
     return (
       <View style={{height : 142}}>
         { data && data.active ? data.active.map( (v,k) =>
@@ -35,6 +36,7 @@ export default class Promotion extends Component {
               <Image
                 source={{uri : v.image}}
                 style={styles.img}
+
               >
               </Image>
 
@@ -53,7 +55,7 @@ export default class Promotion extends Component {
               </Image>
               <CountDown
                 style={styles.countDownStyle}
-                time={data.active && data.active.length && new Date(data.active[0].end_time).getTime()}
+                time={data.active && data.active.length && new Date(data.active[0].end_time.replace(/[-]/g , '/')).getTime()}
                 day={true}
                 hours={true}
                 minute={true}
